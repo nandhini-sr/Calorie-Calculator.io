@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIP & TASTE</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="shortcut icon" href="images/favicon.ico"/>
+</head>
+<body onload="load()">
+	<center>
+	<header>
+		<img src="images/head-pic.jpg" id="headPic">
+	</header>
+	<form>
+		
+		<p id="p1">"Time to help SAI and PAI at <b id="p2">SIP & TASTE</b>!"</p>
+		<b><p id="name"></p></b>
+		<b><p id="p3">Check your DAILY CALORIE REQUIREMENT! Enter your details below - </p></b>
+
+       
+		<label for="gender">Gender:</label>
+		<input type="radio" name="gender" id ="male" checked>Male <input type="radio" name="gender" id="female">Female<br><br>
+		<label for="age">Age (in years):<input type="number" id="age" required></label><br><br> 
+		<label for="height">Height (in cm):<input type="number" id="height" required></label><br><br>
+		<label for="weight">Weight (in kg):<input type="number" id="weight" required></label><br><br>
+		<input type="submit" name="submit" value="Daily Calorie Requirement?" id="submit" onclick="inform(); return false" ><br>
+
+
+		<p id="display"> Your Daily Calorie Requirement using
+		<a href="https://www.thecalculatorsite.com/articles/health/bmr-formula.php">Harris-Benedict BMR METRIC equation </a> on moderate exercise is:</p>
+		<p id="actualDisplay"></p>
+       
+    
+		<p id="newMessage">Check out how much food you can have today! Fill in the table below!</p>
+		<button id="button" onclick="addRow(); return false">Add Food!</button>
+		<br>
+        <div id="cont"></div>
+        <br>
+        <label for="water" id="label_water">Water(no. of glasses):<input type="number" id="glasses_num" placeholder="min 6-8 glasses"></label>      
+        
+
+        <p id="submitLine">Click to check if this food list is Perfect to have!</p>
+        <input type="submit" id="check" value="Check!" onclick="checkCalorie(); return false" >
+        
+          <p id="totalCalories_eaten"></p>
+          <p id="diff"></p>
+          <p id="closeLine"></p><br>
+         
+    
+	</form>
+
+	<script type="text/javascript" src="javascript/javascriptFile.js"></script>
+ </center>
+</body>
+</html>
