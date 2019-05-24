@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>SIP & TASTE</title>
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="shortcut icon" href="images/favicon.ico"/>
 </head>
 <body onload="load()">
@@ -10,10 +10,14 @@
 	<header>
 		<img src="images/head-pic.jpg" id="headPic">
 	</header>
+	<b><u><p id="edit"onclick="getBack()">Edit your previous details</p></u></b>
 	<form>
-		
+		<center>
+			<br>
 		<p id="p1">"Time to help SAI and PAI at <b id="p2">SIP & TASTE</b>!"</p>
+		
 		<b><p id="name"></p></b>
+		<div id="initial">
 		<b><p id="p3">Check your DAILY CALORIE REQUIREMENT! Enter your details below - </p></b>
 
        
@@ -23,7 +27,10 @@
 		<label for="height">Height (in cm):<input type="number" id="height" required></label><br><br>
 		<label for="weight">Weight (in kg):<input type="number" id="weight" required></label><br><br>
 		<input type="submit" name="submit" value="Daily Calorie Requirement?" id="submit" onclick="inform(); return false" ><br>
+		<br>
+        </div>
 
+        <div id="later">
 
 		<p id="display"> Your Daily Calorie Requirement using
 		<a href="https://www.thecalculatorsite.com/articles/health/bmr-formula.php">Harris-Benedict BMR METRIC equation </a> on moderate exercise is:</p>
@@ -31,24 +38,42 @@
        
     
 		<p id="newMessage">Check out how much food you can have today! Fill in the table below!</p>
-		<button id="button" onclick="addRow(); return false">Add Food!</button>
+		<button id="button" onclick="openPop(); return false">Add in table!</button>
 		<br>
+		<b>
         <div id="cont"></div>
-        <br>
+        </b><br>
+        <b>
+
+		<b><p id="remark">Calories contributed by 1g of carb = 4 calories; 1g of protien = 4 calories; 1g of fat = 9 calories</p></b>
         <label for="water" id="label_water">Water(no. of glasses):<input type="number" id="glasses_num" placeholder="min 6-8 glasses"></label>      
         
 
         <p id="submitLine">Click to check if this food list is Perfect to have!</p>
-        <input type="submit" id="check" value="Check!" onclick="checkCalorie(); return false" >
-        
+        <input type="submit" id="check" value="Check!" onclick="checkCalorie(); return false">
+
           <p id="totalCalories_eaten"></p>
           <p id="diff"></p>
           <p id="closeLine"></p><br>
-         
-    
+         </div>
+        
 	</form>
+	<div class="modal" id="modal">
+		<div class="modal__dialog">
+			<section class="modal__content">
+				<a href="#" class="modal__close" onclick="exit()">&times;</a>
+				<h2 class="modal__title">Please enter food list</h2>	
+					<label for="name">Food Name: <input type="text" id="foodName" required></label><br><br>
+					<label for="carbs">Carbs(in g): <input type="number" id="carbs" required></label><br><br>
+					<label for="protiens">Protiens(in g): <input type="number" id="protiens" required></label><br><br>
+					<label for="fats">Fats(in g): <input type="number" id="fats" required></label><br><br>
+					<input type="submit" id="add2table" value="Add Food!" onclick="addFood(); return false">
+					<br><br>
+			</section>
+		</div>
+	</div>
+</center>
+	<script type="text/javascript" src="javascript/javascript.js"></script>
 
-	<script type="text/javascript" src="javascript/javascriptFile.js"></script>
- </center>
 </body>
 </html>
